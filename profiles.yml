@@ -1,0 +1,12 @@
+ecommerce_warehouse:
+  target: dev
+  outputs:
+    dev:
+      type: postgres
+      host: localhost
+      user: ecommerce_user
+      password: ecommerce_password
+      port: 5432
+      dbname: ecommerce
+      schema: analytics
+      threads: 4
