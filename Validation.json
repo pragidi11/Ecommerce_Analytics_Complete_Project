@@ -1,0 +1,9 @@
+{
+  "pages": 4,
+  "visuals": 57,
+  "legacy_nested_json": "passed",
+  "visual_query_field_references": "passed",
+  "model_unchanged": true,
+  "desktop_tested": false,
+  "root_cause_confirmed": false
+}

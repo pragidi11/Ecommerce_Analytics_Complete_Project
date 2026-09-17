@@ -1,0 +1,13 @@
+COMMERCE IQ — COMPATIBILITY EDITION
+
+1. Close the old CommerceIQ project.
+2. Extract this entire ZIP into a NEW folder. Do not merge it with the old project.
+3. Open CommerceIQ_Compatibility.pbip.
+4. Check that the four named report-page tabs appear.
+5. Click Home > Refresh, then File > Save as > Power BI file (*.pbix).
+
+This alternative uses the legacy report layout rather than the enhanced PBIR folder layout. The same embedded data model and measures are retained. No data file paths need to be configured.
+
+STATUS: Compatibility repair candidate, not Desktop-verified. The uploaded ZIP exactly matched the original archive, so it did not reveal how Desktop changed or loaded that archive. The cause of the blank report is not confirmed. JSON and query-reference checks do not establish Power BI runtime compatibility.
+
+If it remains blank, use File > Save as to save a PBIX and upload that file (or send the full error text if saving fails). That provides the report Power BI actually loaded.

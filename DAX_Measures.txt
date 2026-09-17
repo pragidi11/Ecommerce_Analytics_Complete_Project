@@ -1,0 +1,35 @@
+Total Revenue =
+SUM(Sales[Net Sales])
+
+Total Orders =
+DISTINCTCOUNT(Sales[Order ID])
+
+Total Customers =
+DISTINCTCOUNT(Sales[Customer ID])
+
+Average Order Value =
+DIVIDE([Total Revenue], [Total Orders])
+
+Units Sold =
+SUM(Sales[Quantity])
+
+Gross Revenue =
+SUM(Sales[Gross Sales])
+
+Discount Amount =
+[Gross Revenue] - [Total Revenue]
+
+Customer Lifetime Value =
+IF([Total Orders] > 0, CALCULATE([Total Revenue], REMOVEFILTERS('Calendar'), REMOVEFILTERS(Products)))
+
+Last Order Date =
+MAX(Sales[Order Date])
+
+Customer Tier =
+IF([Total Orders] > 0, SWITCH(TRUE(), [Customer Lifetime Value] >= 10000, "Premium", [Customer Lifetime Value] >= 5000, "High Value", "Standard"))
+
+Top 10 Product Revenue =
+VAR ProductRank = RANKX(ALLSELECTED(Products[Product Name]), [Total Revenue], , DESC, DENSE) RETURN IF(ProductRank <= 10, [Total Revenue])
+
+Tier Color =
+SWITCH([Customer Tier], "Premium", "#C9B4FF", "High Value", "#55DDB0", "#9AC7FF")
